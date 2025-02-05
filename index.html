@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My GitHub Website</title>
+    <title>Welcome to My Tech Website</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #1e3a8a, #9333ea);
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
         }
         .hero {
             position: relative;
             width: 100%;
-            height: 50vh;
-            background: url('https://source.unsplash.com/1600x900/?nature,water') no-repeat center center/cover;
+            height: 60vh;
+            background: url('https://source.unsplash.com/1600x900/?technology,ai') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
         }
         .content {
             position: relative;
@@ -25,8 +31,8 @@
             border-radius: 20px;
             padding: 2rem;
             text-align: center;
-            max-width: 400px;
-            margin: -100px auto 2rem;
+            max-width: 500px;
+            margin: -80px auto 2rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .button {
@@ -42,15 +48,26 @@
         .button:hover {
             background: #4338ca;
         }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 1.5rem;
+        }
     </style>
 </head>
 <body>
-    <div class="hero"></div>
+    <div class="hero">
+        <h1 class="text-4xl font-bold">Welcome to My Tech Website</h1>
+    </div>
     <div class="content">
-        <h1 class="text-3xl font-bold">Welcome to My GitHub Website</h1>
-        <p class="text-lg mt-2">Aesthetic HTML & CSS Landing Page</p>
-        <p class="mt-4 text-sm opacity-75">This is a beautifully designed index page for a GitHub-hosted website. Feel free to customize it to your liking.</p>
-        <a href="#about" class="button">Explore More</a>
+        <p class="text-lg mt-2">Your hub for the latest tech news, tutorials, and projects.</p>
+        <div class="buttons">
+            <a href="#articles" class="button">Articles</a>
+            <a href="#tutorials" class="button">Tutorials</a>
+            <a href="#projects" class="button">Projects</a>
+            <a href="#contact" class="button">Contact</a>
+        </div>
     </div>
 </body>
 </html>
