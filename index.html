@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to My Tech Website</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Robotic Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             background: linear-gradient(135deg, #1e3a8a, #9333ea);
@@ -15,6 +17,7 @@
             flex-direction: column;
             min-height: 100vh;
         }
+
         .hero {
             position: relative;
             width: 100%;
@@ -27,6 +30,7 @@
             color: white;
             text-align: center;
         }
+
         .nav {
             position: fixed;
             top: 10px;
@@ -39,15 +43,100 @@
             border-radius: 12px;
             backdrop-filter: blur(5px);
         }
+
         .nav a {
             color: white;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s;
         }
+
         .nav a:hover {
             color: #ffcc00;
         }
+
+        .headline {
+            font-family: 'Orbitron', sans-serif;  /* Robotic Font */
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff); /* Neon Gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 1.5s ease-in-out infinite alternate, fadeIn 3s ease-in-out;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        /* Glowing Effect */
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+            }
+            to {
+                text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+            }
+        }
+
+        /* Glitch Effect */
+        .headline::before,
+        .headline::after {
+            content: 'Welcome to My Tech Website';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            clip: rect(0, 900px, 0, 0);
+            color: #ff00ff;
+            animation: glitch 2s infinite linear alternate-reverse;
+        }
+
+        .headline::after {
+            color: #00ffff;
+            animation: glitch 2s infinite linear alternate-reverse, glitchSkew 3s infinite linear;
+        }
+
+        @keyframes glitch {
+            0% {
+                clip: rect(42px, 9999px, 44px, 0);
+                transform: translate(-2px, -2px);
+            }
+            20% {
+                clip: rect(12px, 9999px, 50px, 0);
+                transform: translate(2px, 2px);
+            }
+            40% {
+                clip: rect(67px, 9999px, 80px, 0);
+                transform: translate(-3px, 0);
+            }
+            60% {
+                clip: rect(90px, 9999px, 100px, 0);
+                transform: translate(3px, -3px);
+            }
+            80% {
+                clip: rect(5px, 9999px, 20px, 0);
+                transform: translate(-1px, 2px);
+            }
+            100% {
+                clip: rect(42px, 9999px, 44px, 0);
+                transform: translate(0, 0);
+            }
+        }
+
+        @keyframes glitchSkew {
+            0% {
+                transform: skew(0deg);
+            }
+            50% {
+                transform: skew(5deg);
+            }
+            100% {
+                transform: skew(0deg);
+            }
+        }
+
         .content {
             margin-top: auto;
             background: rgba(255, 255, 255, 0.1);
@@ -59,6 +148,7 @@
             margin: 2rem auto;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .button {
             display: inline-block;
             margin-top: 1rem;
@@ -69,9 +159,11 @@
             border-radius: 10px;
             transition: background 0.3s;
         }
+
         .button:hover {
             background: #4338ca;
         }
+
         .buttons {
             display: flex;
             flex-wrap: wrap;
@@ -79,15 +171,7 @@
             gap: 10px;
             margin-top: 1.5rem;
         }
-        .headline {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #ffcc00;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            animation: fadeIn 3s ease-in-out;
-            margin-top: 20px;
-        }
+
         @media (min-width: 768px) {
             .headline {
                 font-size: 3rem;
@@ -102,6 +186,7 @@
                 padding: 2rem;
             }
         }
+
         @keyframes fadeIn {
             0% {
                 opacity: 0;
