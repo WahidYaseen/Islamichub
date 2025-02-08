@@ -29,17 +29,6 @@
             justify-content: center;
             color: white;
             text-align: center;
-            filter: blur(0);
-            animation: smoothBlur 5s ease-in-out infinite alternate;
-        }
-
-        @keyframes smoothBlur {
-            from {
-                filter: blur(0);
-            }
-            to {
-                filter: blur(4px);
-            }
         }
 
         .nav {
@@ -75,74 +64,28 @@
             background: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: glow 3s ease-in-out infinite alternate, fadeIn 4s ease-in-out;
-            position: relative;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
+            animation: fadeIn 4s ease-in-out, glowEffect 2s infinite alternate;
             margin-top: 20px;
         }
 
-        @keyframes glow {
+        @keyframes glowEffect {
             from {
-                text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
+                text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
             }
             to {
-                text-shadow: 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff;
+                text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
             }
         }
 
-        .headline::before,
-        .headline::after {
-            content: 'Welcome to My Tech Website';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            clip: rect(0, 900px, 0, 0);
-            color: #ff00ff;
-            animation: glitch 3s infinite linear alternate-reverse;
-        }
-
-        .headline::after {
-            color: #00ffff;
-            animation: glitch 3s infinite linear alternate-reverse, glitchSkew 4s infinite linear;
-        }
-
-        @keyframes glitch {
+        @keyframes fadeIn {
             0% {
-                clip: rect(42px, 9999px, 44px, 0);
-                transform: translate(-1px, -1px);
-            }
-            20% {
-                clip: rect(12px, 9999px, 50px, 0);
-                transform: translate(1px, 1px);
-            }
-            40% {
-                clip: rect(67px, 9999px, 80px, 0);
-                transform: translate(-2px, 0);
-            }
-            60% {
-                clip: rect(90px, 9999px, 100px, 0);
-                transform: translate(2px, -2px);
-            }
-            80% {
-                clip: rect(5px, 9999px, 20px, 0);
-                transform: translate(-1px, 1px);
+                opacity: 0;
+                transform: translateY(20px);
             }
             100% {
-                clip: rect(42px, 9999px, 44px, 0);
-                transform: translate(0, 0);
-            }
-        }
-
-        @keyframes glitchSkew {
-            0% {
-                transform: skew(0deg);
-            }
-            50% {
-                transform: skew(3deg);
-            }
-            100% {
-                transform: skew(0deg);
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
@@ -194,17 +137,6 @@
             .content {
                 max-width: 500px;
                 padding: 2rem;
-            }
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
             }
         }
     </style>
