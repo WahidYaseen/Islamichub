@@ -3,45 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Islamic Hub</title>
+    <title>Islamic Hub - Educational Resources</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for Robotic Look -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             background: linear-gradient(135deg, #1e3a8a, #9333ea);
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            color: white;
         }
 
         .hero {
             position: relative;
             width: 100%;
-            height: 60vh;
+            height: 50vh;
             background: url('https://source.unsplash.com/1600x900/?islamic,mosque') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: white;
             text-align: center;
         }
 
         .nav {
             position: fixed;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
+            top: 0;
+            width: 100%;
+            background: rgba(30, 58, 138, 0.9);
+            padding: 12px 0;
             display: flex;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 8px 16px;
-            border-radius: 12px;
-            backdrop-filter: blur(5px);
+            justify-content: center;
+            gap: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
         }
 
         .nav a {
@@ -56,54 +55,26 @@
         }
 
         .headline {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            background: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
-            animation: fadeIn 4s ease-in-out, glowEffect 2s infinite alternate;
             margin-top: 20px;
-        }
-
-        @keyframes glowEffect {
-            from {
-                text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
-            }
-            to {
-                text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
-            }
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
         .content {
-            margin-top: auto;
+            flex: 1;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 1.5rem;
-            text-align: center;
-            max-width: 90%;
+            padding: 2rem;
             margin: 2rem auto;
+            max-width: 800px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .button {
             display: inline-block;
-            margin-top: 1rem;
+            margin: 1rem 0.5rem;
             padding: 0.75rem 1.5rem;
             background: #4f46e5;
             color: white;
@@ -117,46 +88,34 @@
             transform: scale(1.05);
         }
 
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 1.5rem;
-        }
-
         .hadees-box {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
+            background: rgba(30, 58, 138, 0.9);
             border-radius: 15px;
-            padding: 1rem;
-            margin: 1rem 0;
-            color: white;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .hadees-title {
             font-weight: bold;
-            margin-bottom: 0.5rem;
-            font-size: 1.25rem;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #ffcc00;
+            padding-bottom: 0.5rem;
         }
 
         .hadees-text {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
         }
 
         @media (min-width: 768px) {
             .headline {
-                font-size: 3rem;
+                font-size: 4rem;
             }
-            .nav {
-                gap: 15px;
-                padding: 10px 20px;
-                border-radius: 15px;
-            }
+
             .content {
-                max-width: 500px;
-                padding: 2rem;
+                padding: 3rem;
             }
         }
     </style>
@@ -170,27 +129,28 @@
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </div>
-        <h1 class="headline text-center">Islamic Hub</h1>
+        <h1 class="headline">Islamic Hub</h1>
     </div>
+
     <div class="content">
-        
         <!-- Hadees Section -->
         <div class="hadees-box">
             <div class="hadees-title">Hadees 1</div>
-            <div class="hadees-text"><strong>Arabic:</strong> إنما الأعمال بالنيات</div>
-            <div class="hadees-text"><strong>Urdu:</strong> اعمال کا دارومدار نیتوں پر ہے؟</div>
+            <div class="hadees-text"><strong>Arabic:</strong> إنما الأعمال بالنياتِ</div>
+            <div class="hadees-text"><strong>Urdu:</strong> عمال کا دارومدار نیتوں پر ہے۳</div>
             <div class="hadees-text"><strong>English:</strong> Actions are judged by intentions.</div>
-            <div class="hadees-text"><strong>Hindi:</strong> कार्यों की मूल्यां औद्यों पर निर्भरर कीया जाता है।</div>
+            <div class="hadees-text"><strong>Hindi:</strong> कार्यों की मूल्यां एककी नियतों पर निर्भरर की जाती है।</div>
         </div>
 
         <div class="hadees-box">
             <div class="hadees-title">Hadees 2</div>
-            <div class="hadees-text"><strong>Arabic:</strong> الدين النصيحة</div>
-            <div class="hadees-text"><strong>Urdu:</strong> دین خلص مخلصیت کا نام ہے؟</div>
+            <div class="hadees-text"><strong>Arabic:</strong> الدِّينُ النَّصيحَةُ</div>
+            <div class="hadees-text"><strong>Urdu:</strong> دین خلص مخلصیت کا نام ہے۳</div>
             <div class="hadees-text"><strong>English:</strong> Religion is sincerity.</div>
-            <div class="hadees-text"><strong>Hindi:</strong> धर्म खाखी निर्मलता है।</div>
+            <div class="hadees-text"><strong>Hindi:</strong> धर्म आपकी ईमानदारी है।</div>
         </div>
-        <div class="buttons">
+
+        <div class="flex justify-center">
             <a href="#articles" class="button">Explore Articles</a>
             <a href="#tutorials" class="button">Browse Tutorials</a>
             <a href="#projects" class="button">View Projects</a>
